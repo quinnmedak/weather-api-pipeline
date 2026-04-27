@@ -42,6 +42,7 @@ for zip_code in zip_codes:
     }
 
     response = requests.get(api_url, params=params)
+    response.raise_for_status()
     data = response.json()
 
     city = data["location"]["name"]
